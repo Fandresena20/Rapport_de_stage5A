@@ -1,0 +1,154 @@
+\documentclass[14pt]{extarticle}
+
+% --------------------------------------------------
+% Encodage et langue
+% --------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage{datetime2}
+
+% --------------------------------------------------
+% Mise en page
+% --------------------------------------------------
+\usepackage[letterpaper,top=2cm,bottom=3cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\setlength{\headsep}{40pt}
+\usepackage{booktabs}
+
+% --------------------------------------------------
+% Mathématiques
+% --------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{siunitx}
+
+% --------------------------------------------------
+% Graphiques & figures
+% --------------------------------------------------
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{float}
+
+% --------------------------------------------------
+% Couleurs & liens
+% --------------------------------------------------
+\usepackage{xcolor}
+\definecolor{bleue}{rgb}{0,0,1}
+\definecolor{darkgreen}{RGB}{0,100,0}
+\usepackage[colorlinks=true, allcolors=bleue]{hyperref}
+
+% --------------------------------------------------
+% Table des annexes (personnalisée)
+% --------------------------------------------------
+\usepackage{tocloft}
+\newcommand{\listannexname}{Table des annexes}
+\newlistentry{annexe}{loa}{0}
+\newcommand{\listofannexes}{\listof{annexe}{\listannexname}}
+
+\makeatletter
+\newcommand{\startannexe}[1]{%
+  \clearpage
+  \refstepcounter{annexe}
+  \addcontentsline{loa}{annexe}{Annexe \theannexe\hspace{1em}#1}
+  \section*{Annexe \theannexe \quad #1}
+}
+\makeatother
+
+% --------------------------------------------------
+% Autres packages
+% --------------------------------------------------
+\usepackage[justification=centering]{caption}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% --------------------------------------------------
+% Configuration En-tête/Pied de page
+% --------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\\ \textbf{Etude expérimentale et numérique de l'évolution de l'épaisseur d'une tôle emboutie - Alliage alu 7075}}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+% --------------------------------------------------
+% Page de Garde ENSIBS
+% --------------------------------------------------
+\begin{titlepage}
+    % --- En-tête avec Logo à gauche ---
+    \begin{minipage}{0.5\textwidth}
+        \begin{flushleft}
+            \includegraphics[width=0.5\textwidth]{Images/LOGO/ensibs-ecole-ingenieurs.jpg} % Nom du fichier sans extension
+        \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+       \includegraphics[width=0.5\textwidth]{Images/LOGO/IRDL.png} % Nom du fichier sans extension
+        \end{flushright}
+    \end{minipage}
+
+    \vspace{2cm}
+
+    % --- Corps de la page ---
+    \centering
+    \textsc{\Large Rapport de stage de fin d'étude}\\[1cm]
+    
+    \rule{\linewidth}{0.8mm} \\[0.5cm]
+    {\huge \bfseries Étude expérimentale et numérique de l'évolution de l'épaisseur d'une tôle emboutie}\\[0.4cm]
+    {\Large \bfseries Alliage Aluminium 7075}\\[0.5cm]
+    \rule{\linewidth}{0.8mm} \\[2.5cm]
+
+    % --- Informations Auteurs/Encadreurs ---
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushleft} \large
+            \emph{Auteur :}\\
+            Sena \textsc{Razafy}
+        \end{flushleft}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \begin{flushright} \large
+            \emph{Encadrants :}\\
+            Hervé \textsc{Laurent}\\
+            Constant \textsc{Ramard}
+        \end{flushright}
+    \end{minipage}
+
+    \vfill
+
+    % --- Bas de page ---
+    {\large Promotion 2026}\\[0.5cm]
+    {\large \ Spécialité Mécatronique}\\[0.5cm]
+
+\end{titlepage}
+
+\newpage
+\pagenumbering{roman}
+\begingroup
+\hypersetup{linkcolor=black}
+\tableofcontents
+\newpage
+\listoffigures
+\endgroup
+\newpage
+\listoftables
+
+
+
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section{Introduction}
+La réduction des gaz à effets de serre est devenu un problématique incoutournable pour tous les secteurs industriels. Dans tout ce domaine,plus de 90 pourcent de ces émissions proviennent  de l'industrie de transport. Dont la place du secteur automobile 
+
+% Ton contenu ici
+
+\end{document}
